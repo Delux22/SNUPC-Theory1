@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNUPC - Sistema Numérico Unificado</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: var(--primary);
+            margin-top: 1.5em;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f8f8f8;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            border-left: 4px solid var(--secondary);
+        }
+        .math {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            color: #d35400;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin: 0.5rem 0;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--secondary);
+        }
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            color: #7f8c8d;
+            border-top: 1px solid #eee;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            header {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Sistema Numérico Unificado con Potencial Científico (SNUPC)</h1>
+        <p class="subtitle">Un marco algebraico-contextual para la física teórica</p>
+        <a href="https://github.com/tuusuario/snupc" class="btn">Ver en GitHub</a>
+    </header>
+
+    <div class="section">
+        <h2>¿Qué es SNUPC?</h2>
+        <p>SNUPC es un sistema numérico que generaliza los conceptos tradicionales para unificar diferentes dominios de la física (mecánica cuántica, relatividad general) mediante tuplas contextuales:</p>
+        
+        <div class="math">
+            \[ \text{SNUPC} = (C, D, S, K, A) \]
+        </div>
+        
+        <p>Donde:</p>
+        <ul>
+            <li><strong>C</strong>: Contexto (QM, GR, QG, etc.)</li>
+            <li><strong>D</strong>: Espacio dimensional asociado</li>
+            <li><strong>S</strong>: Estado del sistema</li>
+            <li><strong>K</strong>: Dinámica que gobierna la evolución</li>
+            <li><strong>A</strong>: Atributos/metadatos adicionales</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Ejemplos Básicos</h2>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>Mecánica Cuántica</h3>
+                <pre><code>SNUPC(
+  C = "QM",
+  D = "Hilbert Space ℂ²",
+  S = |ψ⟩ = [0.6, 0.8],
+  K = Ĥ = σₓ (Pauli X),
+  A = {"ℏ": 1}
+)</code></pre>
+            </div>
+            
+            <div class="card">
+                <h3>Relatividad General</h3>
+                <pre><code>SNUPC(
+  C = "GR",
+  D = "ℝ⁴ (Minkowski)",
+  S = gₘₙ = diag(-1,1,1,1),
+  K = Gₘₙ = 8πTₘₙ,
+  A = {"G": 1}
+)</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Morfismos entre Contextos</h2>
+        <p>Los funtores Φ permiten transformar entre diferentes contextos físicos:</p>
+        
+        <div class="math">
+            \[ Φ_{\text{QM}→\text{GR}}(|Ψ⟩) = ⟨Ψ|\hat{g}_{μν}|Ψ⟩ = g_{μν}^{\text{clásico}} \]
+        </div>
+        
+        <h3>Ejemplo Computable</h3>
+        <pre><code>def semiclassical_limit(state, metric_op):
+    """Calcula el límite semiclásico QM→GR"""
+    return np.mean(state @ metric_op)
+
+# Uso:
+g_clasico = semiclassical_limit(ψ, ĝ_μν)</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Aplicación a Gravedad Cuántica</h2>
+        
+        <div class="math">
+            \[ K_{\text{QG}} = \hat{H}_{\text{QM}} + \ell_P^2 G_{μν}(g) \]
+        </div>
+        
+        <p>Donde:</p>
+        <ul>
+            <li>\(\hat{H}_{\text{QM}}\): Hamiltoniano cuántico</li>
+            <li>\(G_{μν}\): Tensor de Einstein</li>
+            <li>\(\ell_P\): Longitud de Planck (acoplamiento)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Implementación</h2>
+        
+        <h3>Instalación</h3>
+        <pre><code>git clone https://github.com/tuusuario/snupc.git
+cd snupc
+pip install -r requirements.txt</code></pre>
+        
+        <h3>Ejecución</h3>
+        <pre><code>from snupc import SNUPC, morphisms
+
+# Crear sistema cuántico
+qm_sys = SNUPC(context="QM", ...)
+
+# Aplicar morfismo a GR
+gr_sys = morphisms.qm_to_gr(qm_sys)</code></pre>
+        
+        <a href="https://github.com/Delux22/SNUPC-Theory1" class="btn">Descargar Código</a>
+    </div>
+
+    <footer>
+        <p>Proyecto desarrollado por Julio Cesar Salas Mendoza - © 2025</p>
+        <p>Licencia MIT - Documentación disponible en <a href="https://arxiv.org">arXiv</a></p>
+    </footer>
+</body>
+</html>
