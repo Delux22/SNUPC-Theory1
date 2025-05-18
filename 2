@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación SNUPC</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Simulación del Sistema Numérico Unificado con Potencial Científico (SNUPC)</h1>
+
+    <label for="exampleSelect">Elige una Simulación:</label>
+    <select id="exampleSelect" onchange="updateSimulation()">
+        <option value="gravity">Emergencia de Gravedad Cuántica</option>
+        <option value="gauge">Transición de Teoría de Gauge</option>
+        <option value="cosmology">Modelos Cosmológicos Cuánticos</option>
+        <option value="blackhole">Transiciones de Fase en Agujeros Negros</option>
+        <option value="stringtheory">Vibraciones en la Teoría de Cuerdas</option>
+    </select>
+
+    <div>
+        <label for="paramSlider">Parámetro:</label>
+        <input type="range" id="paramSlider" min="0" max="10" value="1" step="0.1" oninput="updateValue(this.value)">
+        <span id="paramValue">1</span>
+    </div>
+
+    <canvas id="simulationCanvas" width="800" height="400"></canvas>
+
+    <script>
+        const ctx = document.getElementById('simulationCanvas').getContext('2d');
+        let chart;
+
+        function updateValue(value) {
+            document.getElementById('paramValue').innerText = value;
+            updateSimulation();
+        }
+
+        function updateSimulation() {
+            const example = document.getElementById('exampleSelect').value;
+            const parameter = parseFloat(document.getElementById('paramSlider').value);
+            let labels = [];
+            let data = [];
+
+            if (example === "gravity") {
+                for (let x = -5; x <= 5; x += 0.1) {
+                    labels.push(x.toFixed(1));
+                    data.push(Math.sin(x) * (parameter / 10)); // Emergencia de Gravedad
+                }
+            } else if (example === "gauge") {
+                for (let x = -2 * Math.PI; x <= 2 * Math.PI; x += 0.1) {
+                    labels.push(x.toFixed(1));
+                    data.push(Math.sin(x) * parameter); // Transición de Teoría de Gauge
+                }
+            } else if (example === "cosmology") {
+                for (let x = 0; x <= 5; x += 0.1) {
+                    labels.push(x.toFixed(1));
+                    data.push(parameter * Math.exp(-x)); // Modelos Cosmológicos
+                }
+            } else if (example === "blackhole") {
+                for (let x = 1; x <= 10; x += 0.1) {
+                    labels.push(x.toFixed(1));
+                    data.push(parameter * Math.log(x)); // Transiciones de Fase en Agujeros Negros
+                }
+            } else if (example === "stringtheory") {
+                for (let x = -5; x <= 5; x += 0.1) {
+                    labels.push(x.toFixed(1));
+                    data.push(Math.sin(parameter * x)); // Vibraciones en Teoría de Cuerdas
+                }
+            }
+
+            if (chart) {
+                chart.destroy();
+            }
+
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Resultado de la Simulación',
+                        data: data,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 2,
+                        fill: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Eje X'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Eje Y'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Inicializa la simulación en la carga
+        updateSimulation();
+    </script>
+</body>
+</html>
+```
+
